@@ -15,7 +15,7 @@ contract BoxV2 is UUPSUpgradeable{
     }
 
     function version() external pure returns (uint256) {
-        return 1;
+        return 2;
     }
 
     function _authorizeUpgrade(address _newImplementation) internal override {}

@@ -7,17 +7,17 @@ import {UpgradeBox} from "../script/UpgradeBox.s.sol";
 import {BoxV1} from "../src/BoxV1.sol";
 import {BoxV2} from "../src/BoxV2.sol";
 
-contract DeployAndUpgradeTest {
+contract DeployAndUpgradeTest is Test {
     DeployBox public deployer; 
     UpgradeBox public upgrader;
 
-    address public OWNER = makeaddr("owner");
+    address public OWNER = makeAddr("owner");
     address public proxy;
 
     function setUp() external {
         deployer = new DeployBox();
         upgrader = new UpgradeBox();
-        proxy = deployer.deploy();
+        proxy = deployer.run();
     }
 
     function testProxyStartAsBox1() external {
@@ -33,6 +33,6 @@ contract DeployAndUpgradeTest {
         assertEq(BoxV2(proxy).version(), expectedValue);
 
         BoxV2(proxy).setNumber(3);
-        assertEq(BoxV2(proxy).number(), 3);
+        assertEq(BoxV2(proxy).getNumber(), 3);
     }
 }

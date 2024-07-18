@@ -11,7 +11,6 @@ contract DeployAndUpgradeTest is Test {
     DeployBox public deployer; 
     UpgradeBox public upgrader;
 
-    address public OWNER = makeAddr("owner");
     address public proxy;
 
     function setUp() external {

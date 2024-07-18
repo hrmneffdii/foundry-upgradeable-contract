@@ -80,8 +80,5 @@ make coverage-debug
 - Solc Version: 0.8.19
 - Chain(s) to deploy contract to: Ethereum
 
-## Roles
 
-- Owner: The user who can use and set the logic of implementation contract 
-- Outsides: No one else should be able to use or set the implementation of contract
 

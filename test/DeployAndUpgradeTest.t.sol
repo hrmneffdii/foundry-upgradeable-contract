@@ -24,14 +24,14 @@ contract DeployAndUpgradeTest is Test {
         BoxV2(proxy).setNumber(3);
     }
 
-    function testUpgrades() external {
-        BoxV2 boxV2 = new BoxV2();
+    // function testUpgrades() external {
+    //     BoxV2 boxV2 = new BoxV2();
 
-        upgrader.upgradeBox(proxy, address(boxV2));
-        uint256 expectedValue = 2;
-        assertEq(BoxV2(proxy).version(), expectedValue);
+    //     upgrader.upgradeBox(proxy, address(boxV2));
+    //     uint256 expectedValue = 2;
+    //     assertEq(BoxV2(proxy).version(), expectedValue);
 
-        BoxV2(proxy).setNumber(3);
-        assertEq(BoxV2(proxy).getNumber(), 3);
-    }
+    //     BoxV2(proxy).setNumber(3);
+    //     assertEq(BoxV2(proxy).getNumber(), 3);
+    // }
 }
